@@ -1,29 +1,32 @@
 # The Basic Guide to Building an Asset Hierarchy for Toronto Water
 
+## Defintions
+
+System - a set of causally linked asset parts, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level function. A system entity's number should be enclosed in square brackets, i.e. [entity number].
+
+Collection - a set of distinct units, which are unified under a defintion of the set - in our case, the entity name of the collection.  Each units can be a systems or individual assets. A system entity's number should be enclosed in curlly brackets, i.e. {entity number}.
+
 ## Hard and Fast Rules
 
 * Every entity must have a parent entity
 * Every entity must only have one parent entity
-* Every parent entity must be either
-  * exist in Toronto Water's asset database <sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
-  * exists in the EIW or AIW, in virtue of the consultant's addition into the spreadsheet
+* Every parent entity must either
+  * exist in Toronto Water's asset database (the Work Management System or WMS)<sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
+  * exists in the EIW or AIW spreadsheet, in virtue of the consultant's addition into the spreadsheet
 
 ## Specification at the Lower Levels of the Hierarchy
 
-If an entity is found on a line, think of a shut-off valve or a flow sensor on a pump line for example, then the entity's parent should be the most important asset on that line. In the case of this example, it is the pump, which performs the primary function on the line - and the valve exists to serve the pump. We use the term *line* to denote a set of assets connected in series, by some linear elements, such as pipes and cables. 
+At the lowest level, if an entity is found on a line, think of a shut-off valve or a flow sensor on a pump line for example, then the entity's parent should be the most important asset on that line. In the case of this example, it is the pump, which performs the primary function on the line.  The valve exists to serve the pump. To clarify, we use the term *line* to denote a set of assets connected in series, by some linear elements, such as pipes and cables. 
 
-If the entity already performs the most important function on the line, say the pump, then its parent should be a **system entity**.<sup>[1](#myfootnote1)</sup>, <sup>[2](#myfootnote2)</sup>  For example, the pump would be a child of the sludge removal pump system or a lubrication pumping system.  Note that a system entity could be small.  A set of parallel lineup of equipment, providing some function, such as pumping, mixing, heating. etc, would constitute a system entity, at the lowest level.
+If the entity already performs the most important function on the line, say the pump, then its parent should be a **system entity**.<sup>[2](#myfootnote2)</sup>.  For example, a pump would be a child of the sludge removal pump system or a lubrication pumping system.  Note that a system entity could be small.  A set of parallel lineup of equipment, providing some function, such as pumping, mixing, heating. etc, would constitute a system entity at the lowest level.
 
-If a line does not have an asset that is more prominent than any other, (instead let's say it only has valves performing flow control), then the parent of these valves could be a system entity as well.  Valves on the headers joining parallel (pump) lines of a (pumping) system, often fall into this case. 
+If a line does not have an asset that is more prominent than any other asset on that line, and instead, let's say it only has valves performing flow control, then the parent of these valves should be the system entity as well.  Valves on the headers joining parallel (pump) lines of a (pumping) system would fall into this case. 
 
 ## Specifying Middle Levels of the Hierarchy
 
-If the entity is a system, then its parent must be a larger system (or a collection<sup>[3](#myfootnote3)</sup> of systems).  Here are a couple of requirements to keep in mind, when specifying a parent system.  
+If the entity is a system, then its parent must be a larger system (or a of collection of systems).  There are a requirement to keep in mind when specifying a parent system: every part of the smaller system must be a physical part of the parent system.
 
-1. a parent system must physical contains all parts of the smaller system, and 
-2. every higher-level function of the parent must be supported by the functions of its smaller system parts. 
-
-The instruction above is predicated on the fact that the consultant would need to specifying entities that represents systems, and collections of systems, as parents of lower level assets.  [FHA-CLA] and [FIS-ELS] are examples of high level systems; {THC-PCS} and {TAB-OCS} are examples of high level system collections.  **There is currently no standard on the entity numbering nomenclature for systems.** Toronto Water's Instrumentation Specification Standards, 13040 - EQUIPMENT AND DATA TAGGING document does not apply to system entities, but only for individual assets.  The ASMP group at Toronto Water is working to close this gap.  For the time being, consultants have the liberty to propose system entity numbers that are reasonable in the EIW or AIW. All system entities must be added as a new entity in the EIW or AIW. 
+So far, the instructions are predicated on the fact that the consultant would need to specifying entities that represents systems and collections of systems as parents of lower level assets.  [FHA-CLA] and [FIS-ELS] are examples of high level systems; {THC-PCS} and {TAB-OCS} are examples of high level system collections.  **There is currently no standard on the entity numbering nomenclature for systems or collections.** Toronto Water's Instrumentation Specification Standards, 13040 - EQUIPMENT AND DATA TAGGING document does not apply to system entities, but only to single assets.  The ASMP group at Toronto Water is working to close this gap.  For the time being, consultants have the liberty to propose system entity numbers that are reasonable in the EIW or AIW. All system entities must be added as a new entity in the EIW or AIW. 
 
 ## The Upper Hierarchy
 
@@ -39,13 +42,13 @@ The **plant process support system collection** **{TFHX-FPS}** and the **plant s
 
 The [TFHX-PRC] system is broken down to its high-level sub-systems, and then to more granular sub-systems, until we reach the level of lines and individual assets, at the bottom of the hierarchy.  This was covered at a high-level in this guide.  Toronto Water is currently working on a more detailed guide.
 
-For the {TFHX-FPS} and the {TFHX-FSS} system collection, such as the odour control system or the HVAC system collection, we could continue to break down them down in the next level, into sub-collections of system - such as the collection of all HVAC systems in Section A of the facility.  However, within a couple of levels, we should reach the individual support system entities, each serving a certain sub-system of the [TFHX-PRC] or a certain building or floor space of the facility.  Examples of individual systems include, odour control system for primary treatment or HVAC system for the Z-building. 
+For the {TFHX-FPS} and the {TFHX-FSS} system collection, such as the odour control system or the HVAC system collection, we could break these collections down into sub-collections of system - such as the collection of all HVAC systems in Section A of the facility.  However, within a couple of levels of the hierarchy, we should reach the individual support system entities, each serving a certain sub-system of the [TFHX-PRC] or a certain building or floor space of the facility.  Examples of individual systems include, odour control system for primary treatment or HVAC system for the Z-building. 
 
-Going further down the {TFHX-FPS} or the {TFHX-FSS} branches.  The individual systems can be broken down to sub-systems, in the same manner that the [TFHX-PRC] is broken down.
+Going even further down the {TFHX-FPS} or the {TFHX-FSS} branches.  The individual systems can be broken down to sub-systems, and then lines and individual assets, in the same manner that the [TFHX-PRC] is broken down.
 
 # Appendix A - Facility Upper Hierarchy
   
-The following table presents a template of of the facility upper hierarchy. "TFHX" in the Entity Number column are the standin character for a Toronto Water's facility code, e.g. TAB, THC, FHA.  The "...." character indicates a level below the root the hierarchy. The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
+The following table presents a template of the facility upper hierarchy. "TFHX" in the Entity Number column are the standin characters for a Toronto Water's facility code, e.g. TAB, THC, FHA.  The "...." indicates a level below the root the hierarchy. The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
 
 | Level | Entity Number                      | Entity Name                                                  |
 | ----- | ---------------------------------- | ------------------------------------------------------------ |
@@ -81,10 +84,8 @@ The following table presents a template of of the facility upper hierarchy. "TFH
 
 # Notes
 
-<a name="myfootnote1">1</a>: Note this requirement will change in the future.  For now, it is kept in continuity with the present practice
+<a name="myfootnote1">1</a>: The relevant scope of assets should be exported to the consultant at the beginning of the project. If it is not, the consultant should contact the ASMP reliability engineering group, via its Toronto Water project manager. 
 
-<a name="myfootnote2">2</a>: a set of causally linked assets, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level function. A system entity's number should be enclosed in square brackets, i.e. [entity number].
+<a name="myfootnote2">2</a>: Note this requirement will change in the future.  For now, it is kept in continuity with the present practice
 
-<a name="myfootnote3">3</a>: A collection a set of distinct units, which are unified under the collection by some description of the set - in our case, the entity name of the collection.  Each units can be a systems or individual assets. A system entity's number should be enclosed in curlly brackets, i.e. {entity number}.
 
-<a name="myfootnote4">4</a>: The relevant scope of assets should be exported to the consultant at the beginning of the project. If it is not, the consultant should contact the ASMP reliability engineering group, via its Toronto Water project manager. 
