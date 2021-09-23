@@ -37,44 +37,42 @@ The instruction above is predicated on the fact that you would need to specifyin
 
 # Appendix A - Facility Upper Hierarchy
   
-The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
+The following table presents a template of of the facility upper hierarchy. The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
 
-| Entity Number                  | Entity name                                                  |
-| ------------------------------ | ------------------------------------------------------------ |
-| {TFHX}                         | Asset Collection, All Assets of TFHX facility                |
-| .  **[TFHX-PRC]**              | System, Facility System,  Wastewater Treatment Function      |
-| .  **{TFHX-FSS}**              | System Collection, Facility Wide  Spatial Support Function   |
-| .  .   {THS-ACC}               | System Collection, Building Space HVAC Function              |
-| .  .   {TFHX-FIRE-FEQ,LTX,LTG} | System Collection, Evacuation,  Fire Prevention, and Fire Suppression |
-| .  .   {TFHX-AMT}              | System Collection, Atmosphere  Monitoring Function           |
-| .  .   {TFHX-SS}               | System Collection, Physical  Security Function               |
-| .  .   {TFHX-STW,FSW}          | System Collection, Sanitary and  Storm Water Handling Functions |
-| .  .   {TFHX-GRK}              | System Collection, Facility  Ground Service                  |
-| .  **{TFHX-FPS}**              | System Collection, Facility Wide  System Support Function    |
-| .  .   {TFHX-MULTI}            | System Collection,  Multi-functional Equipment Unit          |
-| .  .   {TFHX-ELS}              | System Collection, Electrical Distribution Function          |
-| .  .   {TFHX-EMP}              | System Collection, Emergency Power Supply Function           |
-| .  .   .  {TFHX-UPS,BAT}       | System Collection, Emergency Power Supply Function           |
-| .  .   {TFHX-PCS}              | System Collection, Process Control Function                  |
-| .  .   {TFHX-OCS}              | System Collection, Odour Control Function                    |
-| .  .   {TFHX-CW}               | System Collection, City Water Supply Function                |
-| .  .   {TFHX-PWA}              | System Collection, Plant Water Supply Function               |
-| .  .   {TFHX-NG}               | System Collection, Facility Natural Gas Supply Function      |
-| .  .   {TFHX-SA}               | System Collection, Service Air,  Non-Instrument Supply Function |
-| .  .   {TFHX-AI}               | System Collection, Instrument  Air Supply Function           |
-| .  .   {TFHX-PA}               | System Collection, Process Air  Supply Function              |
-| .  {TFHX-ARC}                  | Asset Collection, Buildings,  Architectural Parts, Structural Parts of Building |
-| .  .   {TFHX-BLDG}             | Asset Collection, Buildings                                  |
-| .  .   {TFHX-ARCP}             | Asset Collection, Architectural  and Structural Parts        |
-| .  {TFHX-TOOL}                 | Asset Collection, Tools and  Stationary Service Equipment    |
-| .  .   {TFHX-MCS}              | Asset Collection, Stationary and  Workshop Tools             |
-| .  .   {TFHX-HTOOL}            | Asset Collection, Mobile and  Hand Tools                     |
-| .  {TFHX-VEH}                  | Asset Collection, Vehicles                                   |
-
+| Entity Number             | Full Asset Functional  Entity Name                           |
+| ------------------------- | ------------------------------------------------------------ |
+| {TFHX}                    | Asset Collection,  Assets Supporting and Function and Operation of XWWTP |
+| -[TFHX-PRC]               | System, Facility  System, Wastewater Treatment Function      |
+| -{TFHX-FSS}               | System Collection,  Facility Wide Spatial Support Function   |
+| --{THS-ACC}               | System Collection,  Builidng Space HVAC Function             |
+| --{TFHX-FIRE-FEQ,LTX,LTG} | System Collection,  Evacuation, Fire Prevention, and Fire Suppression |
+| --{TFHX-AMT}              | System Collection,  Atmosphere Monitoring Function           |
+| --{TFHX-SS}               | System Collection,  Physical Security Function               |
+| --{TFHX-STW,FSW}          | System Collection,  Sanitary and Storm Water Handling Functions |
+| --{TFHX-GRK}              | System Collection,  Facility Ground Service                  |
+| -{TFHX-FPS}               | System Collection,  Facility Wide System Support Function    |
+| --{TFHX-MULTI}            | System Collection,  Multi-functional Equipment Unit          |
+| --{TFHX-ELS}              | System Collection,  Electrical Distribution Function         |
+| --{TFHX-EMP}              | System Collection,  Emergency Power Supply Function          |
+| ---{TFHX-UPS,BAT}         | System Collection,  Emergency Power Supply Function          |
+| --{TFHX-PCS}              | System Collection,  Process Control Function                 |
+| --{TFHX-OCS}              | System Collection,  Odour Control Function                   |
+| --{TFHX-CW}               | System Collection,  City Water Supply Function               |
+| --{TFHX-PWA}              | System Collection,  Plant Water Supply Function              |
+| --{TFHX-NG}               | System Collection,  Facility Natural Gas Supply Function     |
+| --{TFHX-SA}               | System Collection,  Service Air, Non-Instrument Supply Function |
+| --{TFHX-AI}               | System Collection,  Instrument Air Supply Function           |
+| --{TFHX-PA}               | System Collection,  Process Air Supply Function              |
+| -{TFHX-ARC}               | Asset Collection,  Buildings, Architectural Parts, Structural Parts of Building |
+| --{TFHX-BLDG}             | Asset Collection,  Buildings                                 |
+| --{TFHX-ARCP}             | Asset Collection,  Architectural and Structural Parts        |
+| -{TFHX-TOOL}              | Asset Collection,  Tools and Stationary Service Equipment    |
+| --{TFHX-MCS}              | Asset Collection,  Stationary and Workshop Tools             |
+| --{TFHX-HTOOL}            | Asset Collection,  Mobile and Hand Tools                     |
+| -{TFHX-VEH}               | Asset Collection,  Vehicles                                  |
 
 
 # Notes
-
 
 <a name="myfootnote1">1</a>: Note this requirement will change in the future.  For now, it is kept in continuity with the present practice
 
