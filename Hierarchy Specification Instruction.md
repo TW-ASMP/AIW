@@ -37,7 +37,7 @@ The instruction above is predicated on the fact that you would need to specifyin
 
 # Appendix A - Facility Upper Hierarchy
   
-The following table presents a template of of the facility upper hierarchy. The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
+The following table presents a template of of the facility upper hierarchy. "TFHX" in the Entity Number column are the standin character for a Toronto Water's facility code, e.g. TAB, THC, FHA.  The "-" character indicates hierarchal level. The curly brackets around an entity's name, such as {entity number}, signify that the entity represents collection. The square bracket, such as [entity number] signifies that the entity represents a system.
 
 | Entity Number             | Full Asset Functional  Entity Name                           |
 | ------------------------- | ------------------------------------------------------------ |
