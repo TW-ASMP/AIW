@@ -1,6 +1,14 @@
-# Guide on Identifying the Correct Parent Entity
+# The Basic Guide to Building an Asset Hierarchy for Toronto Water
 
-## Lower Levels of the Hierarchy
+## Hard and Fast Rules
+
+1. Every entity must have a parent entity
+2. Every entity must only have one parent entity
+3. Every parent entity must be either
+  4. exist in Toronto Water's asset database <sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
+  5. exists in the EIW or AIW, in virtue of the consultant's addition 
+
+## Specification at the Lower Levels of the Hierarchy
 
 If an entity is found on a line, think of a shut-off valve or a flow sensor on a pump line for example, then the entity's parent should be the most important asset on that line. In the case of this example, it is the pump, which performs the primary function on the line - and the valve exists to serve the pump. We use the term *line* to denote a set of assets connected in series, by some linear elements, such as pipes and cables. 
 
@@ -8,14 +16,16 @@ If the entity already performs the most important function on the line, say the 
 
 If a line does not have an asset that is more prominent than any other, (instead let's say it only has valves performing flow control), then the parent of these valves could be a system entity as well.  Valves on the headers joining parallel (pump) lines of a (pumping) system, often fall into this case. 
 
-## Middle Levels of the Hierarchy
+## Specifying Middle Levels of the Hierarchy
 
 If the entity is a system, then its parent must be a larger system (or a collection<sup>[3](#myfootnote3)</sup> of systems).  Here are a couple of requirements to keep in mind, when specifying a parent system.  
 
 1. a parent system must physical contains all parts of the smaller system, and 
 2. every higher-level function of the parent must be supported by the functions of its smaller system parts. 
 
-## Levels of the Hierarchy
+The instruction above is predicated on the fact that the consultant would need to specifying entities that represents systems, and collections of systems, as parents of lower level assets.  [FHA-CLA] and [FIS-ELS] are examples of high level systems; {THC-PCS} and {TAB-OCS} are examples of high level system collections.  **There is currently no standard on the entity numbering nomenclature for systems.** Toronto Water's Instrumentation Specification Standards, 13040 - EQUIPMENT AND DATA TAGGING document does not apply to system entities, but only for individual assets.  The ASMP group at Toronto Water is working to close this gap.  For the time being, consultants have the liberty to propose system entity numbers that are reasonable in the EIW or AIW. All system entities must be added as a new entity in the EIW or AIW. 
+
+## The Upper Hierarchy
 
 The highest levels of a facilities hierarchy follows a template found in Appendix A.
 
@@ -32,8 +42,6 @@ The [TFHX-PRC] system is broken down to its high-level sub-systems, and then to 
 For the {TFHX-FPS} and the {TFHX-FSS} system collection, such as the odour control system or the HVAC system collection, we could continue to break down them down in the next level, into sub-collections of system - such as the collection of all HVAC systems in Section A of the facility.  However, within a couple of levels, we should reach the individual support system entities, each serving a certain sub-system of the [TFHX-PRC] or a certain building or floor space of the facility.  Examples of individual systems include, odour control system for primary treatment or HVAC system for the Z-building. 
 
 Going further down the {TFHX-FPS} or the {TFHX-FSS} branches.  The individual systems can be broken down to sub-systems, in the same manner that the [TFHX-PRC] is broken down.
-
-The instruction above is predicated on the fact that you would need to specifying entities that represents systems, and collections of systems. These entities will be the parents of asset entities and line entities that make up the system.  [FHO-CLA] and [FHO-ELS] are examples of the high level system. **There is currently no standard on the entity numbering nomenclature for low level systems.** The 13040 document does not apply to system entities, but only for individual assets.  The ASMP group at Toronto Water is working to close this gap.  You have the liberty to proposing an entity number that is reasonable in the EIW. Whatever new system entity that you propose as a parent should also be added as a new entity in the sheet named *1. General Information*.
 
 # Appendix A - Facility Upper Hierarchy
   
@@ -78,3 +86,5 @@ The following table presents a template of of the facility upper hierarchy. "TFH
 <a name="myfootnote2">2</a>: a set of causally linked assets, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level function. A system entity's number should be enclosed in square brackets, i.e. [entity number].
 
 <a name="myfootnote3">3</a>: A collection a set of distinct units, which are unified under the collection by some description of the set - in our case, the entity name of the collection.  Each units can be a systems or individual assets. A system entity's number should be enclosed in curlly brackets, i.e. {entity number}.
+
+<a name="myfootnote4">4</a>: The relevant scope of assets should be exported to the consultant at the beginning of the project. If it is not, the consultant should contact the ASMP reliability engineering group, via its Toronto Water project manager. 
