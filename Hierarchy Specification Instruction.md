@@ -2,11 +2,11 @@
 
 ## Hard and Fast Rules
 
-1. Every entity must have a parent entity
-2. Every entity must only have one parent entity
-3. Every parent entity must be either
-  4. exist in Toronto Water's asset database <sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
-  5. exists in the EIW or AIW, in virtue of the consultant's addition 
+* Every entity must have a parent entity
+* Every entity must only have one parent entity
+* Every parent entity must be either
+  * exist in Toronto Water's asset database <sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
+  * exists in the EIW or AIW, in virtue of the consultant's addition into the spreadsheet
 
 ## Specification at the Lower Levels of the Hierarchy
 
