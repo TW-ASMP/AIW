@@ -10,12 +10,10 @@ If a line does not have an asset that is more prominent than any other, (instead
 
 ## Middle Levels of the Hierarchy
 
-If the entity a system, then its parent must also be a (larger) system or a collection of systems.  Here are a couple of requirements to keep in mind. 
+If the entity is a system, then its parent must be a larger system (or a collection<sup>[3](#myfootnote3)</sup> of systems).  Here are a couple of requirements to keep in mind, when specifying a parent system.  
 
 1. a parent system must physical contains all parts of the smaller system, and 
-2. higher-level function(s) of the parent must be supported by the lower-level function(s) of the smaller system. 
-
-For example, the two rules would hold if we specified the secondary treatment system to be the parent of the secondary aeration system.
+2. every higher-level function of the parent must be supported by the functions of its smaller system parts. 
 
 ## Levels of the Hierarchy
 
