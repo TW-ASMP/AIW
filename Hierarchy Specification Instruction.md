@@ -1,4 +1,5 @@
 # Basic Guide to Building an Asset Hierarchy for Consultants
+<sup>Written by Tony Huang, Asset Strategy and Maintenance Planning Unit, Toronto Water.</sup>
 
 ## Definitions
 
