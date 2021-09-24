@@ -73,7 +73,7 @@ The following table presents a template of the facility upper hierarchy. "TFHX" 
 | 3     | .... .... {TFHX-MULTI}             | System Collection,  Multi-functional Equipment Unit          |
 | 3     | .... .... {TFHX-ELS}               | System Collection,  Electrical Distribution Function         |
 | 3     | .... .... {TFHX-EMP}               | System Collection,  Emergency Power Supply Function          |
-| 4     | .... .... ....  {TFHX-UPS,BAT}     | System Collection,  Emergency Power Supply Function          |
+| 4     | .... .... ....  {TFHX-UPS}         | System Collection,  Battery Powered Emergency Power Supply Function          |
 | 3     | .... .... {TFHX-PCS}               | System Collection,  Process Control Function                 |
 | 3     | .... .... {TFHX-OCS}               | System Collection,  Odour Control Function                   |
 | 3     | .... .... {TFHX-CW}                | System Collection,  City Water Supply Function               |
@@ -87,7 +87,7 @@ The following table presents a template of the facility upper hierarchy. "TFHX" 
 | 3     | .... .... {TFHX-ARCP}              | Asset Collection,  Architectural and Structural Parts        |
 | 2     | .... {TFHX-TOOL}                   | Asset Collection,  Tools and Stationary Service Equipment    |
 | 3     | .... .... {TFHX-MCS}               | Asset Collection,  Stationary and Workshop Tools             |
-| 3     | .... .... {TFHX-HTOOL}             | Asset Collection,  Mobile and Hand Tools                     |
+| 3     | .... .... {TFHX-HTOOL}             | Asset Collection,  Portable and Hand Tools                   |
 | 2     | .... {THC-VEH}                     | Asset Collection,  Vehicles                                  |
 
 # Notes
