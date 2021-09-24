@@ -22,7 +22,7 @@
 
 At the lowest level, if an entity is found on a line, think of a shut-off valve or a flow sensor on a pump line for example, then the entity's parent should be the most important asset on that line. In the case of this example, it is the pump, which performs the primary function on the line.  The valve exists to serve the pump. Finally just to clarify, we use the term *line* to denote a set of assets connected in series, by some linear elements, such as pipes and cables. 
 
-If the entity already performs the most important function on the line, say the pump, then its parent should be a **system entity**.<sup>[2](#myfootnote2)</sup>.  For example, a pump would be a child of the sludge removal pumping system or a certain lubrication pumping system.  A system entity could be small.  A set of parallel lineups of equipment, providing some function, such as mixing, heating, or pumping would constitute a low level system entity.
+If the entity already performs the most important function on the line, say the pump, then its parent should be a **system entity**.<sup>[2](#myfootnote2)</sup>.  For example, a pump would be a child of the sludge removal pumping system or a certain lubrication pumping system.  A system entity could be small.  A** set of parallel lineups of equipment, providing some function, such as mixing, heating, or pumping would constitute a low level system entity.**
 
 If a line does not have an asset that is more prominent than any other asset on that line, and instead, let's say it only has valves performing flow control, then the parent of these valves should be the system entity as well.  Valves on the headers joining parallel (pump) lines of a (pumping) system would fall into this case. 
 
