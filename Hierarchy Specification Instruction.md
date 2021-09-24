@@ -92,7 +92,7 @@ The following table presents a template of the facility upper hierarchy. "TFHX" 
 
 # Notes
 
-<a name="myfootnote1">1</a>: The relevant scope of assets should be exported to the consultant at the beginning of the project. If it is not, the consultant should contact the ASMP reliability engineering group, via its Toronto Water project manager. 
+<a name="myfootnote1">1</a>: The relevant scope of assets should be exported to you at the beginning of the project. If it is not, you should contact the ASMP reliability engineering group, via your Toronto Water project manager. 
 
 <a name="myfootnote2">2</a>: Note this requirement will change in the future.  For now, it is kept in continuity with the present practice
 
