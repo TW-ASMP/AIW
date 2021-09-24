@@ -46,7 +46,7 @@ The {TFHX-FSS} collection includes members that support the access, optimal oper
 
 **When specifying the hierarchy, you must group assets that belong to the various facility support systems into separate groups,** such that they can be easily integrated under the sub-branches of the upper hierarchy, shown in Appendix A.  **These asset must not be not be mixed with the process system assets, under the [TFHX-PRC] main branch of the hierarchy**. 
 
-## System and System Collection Hierarchical Breakdown
+## A Review of System and System Collection Hierarchical Breakdown
 
 To reiterate some contents above, [TFHX-PRC] system is broken down to its high-level sub-systems, and then to more granular sub-systems, until we reach the level of lines and individual assets, at the bottom of the hierarchy. We are currently working on a more detailed guide, which should be available by the end of 2021.
 
@@ -54,7 +54,7 @@ For the {TFHX-FPS} and the {TFHX-FSS} system collection, such as the odour contr
 
 Going even further down the {TFHX-FPS} or the {TFHX-FSS} branches.  The individual systems should also be broken down into subsystems, and then lines and individual assets, in the same manner that the [TFHX-PRC] is broken down.
 
-# Appendix A - Facility Upper Hierarchy
+# Appendix A - The Facility Upper Hierarchy
   
 The following table presents a template of the facility upper hierarchy. "TFHX" in the Entity Number column is a piece of stand-in text for a facility code, e.g. TAB, THC, FHA.  The "...." text indicates a level below the root of the hierarchy. The curly brackets around an entity's name signify that the entity represents collection. The square bracket signifies that the entity represents a system.
 
