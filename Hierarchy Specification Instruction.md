@@ -11,14 +11,13 @@
 
 **We/us** - refers to Toronto Water
 
-## Hard and Fast Rules
+## Hard-and-Fast Rules of Hierarchy Specification
 
-* Every entity must have a parent entity
-* **Rule of Single Parent** Every entity must only have one parent entity
-* Every parent entity must either
+* Every entity, with the exception of the enity that represents an entire facility, must have one and only one parent eneity
+* Every entity that is specified as a parent entity must either
   * exist in Toronto Water's asset database (the Work Management System or WMS)<sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
   * exists in the EIW or AIW spreadsheet, in virtue of the consultant's addition into the spreadsheet
-* An Entity's parent may not be 
+* An entity's parent may not be 
   * the entity itself,
   * any child of the entity, or in more general terms,
   * any of the entity's decendents in the hierarchy
