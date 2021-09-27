@@ -1,7 +1,7 @@
 # Basic Guide to Building an Asset Hierarchy for Consultants
 <sup>Written by Tony Huang, Asset Strategy and Maintenance Planning Unit, Toronto Water.</sup>
 
-## Definitions
+## Terms
 
 **System** - a set of causally linked asset parts, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level functions. A system entity's number should be enclosed in square brackets, i.e. [entity number].
 
@@ -14,10 +14,14 @@
 ## Hard and Fast Rules
 
 * Every entity must have a parent entity
-* Every entity must only have one parent entity
+* **Rule of Single Parent** Every entity must only have one parent entity
 * Every parent entity must either
   * exist in Toronto Water's asset database (the Work Management System or WMS)<sup>[1](#myfootnote1)</sup>, previous to the start of the project, or
   * exists in the EIW or AIW spreadsheet, in virtue of the consultant's addition into the spreadsheet
+* An Entity's parent may not be 
+  * the entity itself,
+  * any child of the entity, or in more general terms,
+  * any of the entity's decendents in the hierarchy
 
 ## Specification at the Lower Levels of the Hierarchy
 
