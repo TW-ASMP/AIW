@@ -94,7 +94,7 @@ The following table presents a template of the facility upper hierarchy. "TFHX" 
 | 3     | .... .... {TFHX-HTOOL}             | Asset Collection,  Portable and Hand Tools                   |
 | 2     | .... {THC-VEH}                     | Asset Collection,  Vehicles                                  |
 
-# Notes
+# Note
 
 <a name="myfootnote1">1</a>: The relevant scope of assets should be exported to you at the beginning of the project. If it is not, you should contact the ASMP reliability engineering group, via your Toronto Water project manager. 
 
