@@ -3,13 +3,13 @@
 
 ## Terms
 
-**System** - a set of causally linked asset parts, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level functions. A system entity's number should be enclosed in square brackets, i.e. [entity number].
+`System` - a set of causally linked asset parts, interconnected by linear assets or wireless information links, which as a whole possesses one or more higher-level functions. A system entity's number should be enclosed in square brackets, i.e. [entity number].
 
-**Collection** - a set of distinct units, which are unified under a definition of the set - in our case, the entity name of the collection.  Each unit can be a system or individual assets. A system entity's number should be enclosed in curly brackets, i.e. {entity number}.
+`Collection` - a set of distinct units, which are unified under a definition of the set - in our case, the entity name of the collection.  Each unit can be a system or individual assets. A system entity's number should be enclosed in curly brackets, i.e. {entity number}.
 
-**You** - in the context of the document, refers to the consult
+`You` - in the context of the document, refers to the consult
 
-**We/us** - refers to Toronto Water
+`We/us` - refers to Toronto Water
 
 ## Hard-and-Fast Rules of Hierarchy Specification
 
