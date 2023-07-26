@@ -1,6 +1,6 @@
 package com.tw.aiw.model;
 
-public class RoleModel {
+public class RoleEntityModel {
 	private String EntityNumber;//col3
 	private String EntityParent;//30
 	private String EntityName;//4
@@ -9,7 +9,7 @@ public class RoleModel {
 	private String InProjectScope;//5
 	
 	
-	public RoleModel() {
+	public RoleEntityModel() {
 		EntityNumber = "";
 		EntityParent = "";
 		EntityName = "";
@@ -19,7 +19,7 @@ public class RoleModel {
 		
 	}
 	
-	public RoleModel(String entityNumber, String entityParent, String entityName, String physicalAssetStatus,
+	public RoleEntityModel(String entityNumber, String entityParent, String entityName, String physicalAssetStatus,
 			String plannedChangesToRole, String inProjectScope) {
 		super();
 		EntityNumber = entityNumber;
@@ -29,7 +29,19 @@ public class RoleModel {
 		PlannedChangesToRole = plannedChangesToRole;
 		InProjectScope = inProjectScope;
 	}
-	
+
+	public String[] getByColumns() {
+		String [] columns = new String[6];
+		columns[0] = this.EntityNumber;
+		columns[1] = this.EntityName;
+		columns[2] = this.PhysicalAssetStatus;
+		columns[3] = this.PlannedChangesToRole;
+		columns[4] = this.InProjectScope;
+		columns[5] = this.EntityParent;
+		
+		return columns;
+	}
+	//setters and getters
 	public String getEntityNumber() {
 		return EntityNumber;
 	}
