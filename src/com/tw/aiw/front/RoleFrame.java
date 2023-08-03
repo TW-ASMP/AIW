@@ -131,6 +131,15 @@ public class RoleFrame extends JFrame implements ActionListener{
 		mnNewMenu_1.add(mntmNewMenuItem);
 		mntmNewMenuItem.addActionListener(this);
 		
+		JMenuItem mntmNewMenuItem1 = new JMenuItem("SortByWMSTree");
+		mnNewMenu_1.add(mntmNewMenuItem1);
+		mntmNewMenuItem1.addActionListener(this);
+		
+		JMenuItem mntmNewMenuItem2 = new JMenuItem("SortByLine");
+		mnNewMenu_1.add(mntmNewMenuItem2);
+		mntmNewMenuItem2.addActionListener(this);
+		
+		
 		
 		
 		contentPane = new JPanel();
@@ -158,7 +167,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 		//initialize popup menu of tree
 		 this.roleTreePopupMenu = new JPopupMenu("Tree Actions");
 		  JMenuItem roleTreeMI1 = new JMenuItem("Find in table");
-		  JMenuItem roleTreeMI2 = new JMenuItem("Add Chile");
+		  JMenuItem roleTreeMI2 = new JMenuItem("Add Child");
 		  JMenuItem roleTreeMI3 = new JMenuItem("Set as Root");
 		  roleTreeMI1.addActionListener(this);
 		  roleTreeMI2.addActionListener(this);
@@ -301,12 +310,20 @@ public class RoleFrame extends JFrame implements ActionListener{
 	    		  ex.printStackTrace();
 	    	  }
 	    	
+	      }else if(e.getActionCommand().equalsIgnoreCase("SortByWMSTree")){
+	    	  this.roleTblModel.setRowCount(0);
+	    	  this.drawRoleTableByTree();
+	    	  
+	      }else if(e.getActionCommand().equalsIgnoreCase("SortByLine")){
+	    	  this.roleTblModel.setRowCount(0);
+	    	  this.drawRoleTableLineByLine();
+	    	  
 	      }else if(e.getActionCommand().equalsIgnoreCase("find in table")){
 	    	  
 	    	  DefaultMutableTreeNode selNode = (DefaultMutableTreeNode) roleTree
 	    	            .getLastSelectedPathComponent(); 
 	    	 
-	    	  JOptionPane.showMessageDialog(null, "find "+ selNode.toString()+" in table");
+	    	  //JOptionPane.showMessageDialog(null, "find "+ selNode.toString()+" in table");
 	    	  this.searchAndFocusCell(selNode.toString());
 	    	  
 	      }else if(e.getActionCommand().equalsIgnoreCase("find in tree")){
@@ -314,7 +331,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 				int row = roleTable.getSelectedRow();
 				int column = roleTable.getSelectedColumn();
 			   String x = roleTable.getValueAt(row,column).toString();
-		    	  JOptionPane.showMessageDialog(null, "find "+x+" in tree");
+		    	  //JOptionPane.showMessageDialog(null, "find "+x+" in tree");
 			   if(x != null && x.length()>0) {
 				   searchAndFocusNode(x);
 			   }	    	  
