@@ -19,7 +19,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
@@ -62,6 +65,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.ListSelectionModel;
+import javax.swing.RowFilter;
 import javax.swing.SwingUtilities;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -73,6 +77,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 	
 	private JTable roleTable;	
 	private DefaultTableModel roleTblModel;
+	private TableRowSorter sorter;
 	
 	private JTextField searchBox;
 	
@@ -85,6 +90,8 @@ public class RoleFrame extends JFrame implements ActionListener{
 	private RoleEntityService roleEntityService;
 	List<RoleEntityModel> roleList;
 	private String[] topNodes = {"","THX-DIG"};
+	private String[] columnIndex = {"0","1","2","3","4","5"};
+	private JTextField filterTextField;
 	/**
 	 * Launch the application.
 	 */
@@ -211,6 +218,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 		roleTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		roleTable.setFont(new Font("Dialog", Font.PLAIN, 10));
 		roleTable.setCellSelectionEnabled(true);
+		roleTable.setAutoCreateRowSorter(true);
 		scrollPane_roleTable.setViewportView(roleTable);
 		roleTable.setGridColor(Color.LIGHT_GRAY);
 		int x = roleTable.getRowHeight();
@@ -288,6 +296,65 @@ public class RoleFrame extends JFrame implements ActionListener{
 		btn_loadBtn.addActionListener(this);
 		panel_upPanel.add(btn_loadBtn);
 		
+		// filter section
+		this.sorter = new TableRowSorter<>(this.roleTblModel);
+		this.roleTable.setRowSorter(sorter);
+		filterTextField = new JTextField();
+		filterTextField.setBounds(449, 101, 96, 20);
+		panel_upPanel.add(filterTextField);
+		filterTextField.setColumns(10);
+		
+		JComboBox filterComboBox = new JComboBox(this.columnIndex);
+		filterComboBox.setBounds(552, 100, 54, 22);
+		panel_upPanel.add(filterComboBox);
+		filterTextField.getDocument().addDocumentListener(new DocumentListener() {
+			 @Override
+	            public void insertUpdate(DocumentEvent e) {
+	                //update(e);
+				 search(filterTextField.getText(),Integer.parseInt((String)filterComboBox.getSelectedItem()));
+	            }
+
+	            @Override
+	            public void removeUpdate(DocumentEvent e) {
+	                //update(e);
+				 search(filterTextField.getText(),Integer.parseInt((String)filterComboBox.getSelectedItem()));
+	            }
+
+	            @Override
+	            public void changedUpdate(DocumentEvent e) {
+	                //update(e);
+					 search(filterTextField.getText(),Integer.parseInt((String)filterComboBox.getSelectedItem()));
+	            }
+                /*
+	            private void update(DocumentEvent e) {
+	                String text = filterTextField.getText();
+	                if (text.trim().length() == 0) {
+	                    sorter.setRowFilter(null);
+	                } else {
+	                   // sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 4));
+	                    sorter.setRowFilter(RowFilter.regexFilter(text, 4));
+	                }
+	            }
+	            */
+	            public void search(String str, int column) {
+	                if (str.length() == 0) {
+	                   sorter.setRowFilter(null);
+	                	//sorter.setRowFilter(RowFilter.regexFilter("/^$/", 3));
+	                } else if (str.length()>0 && str.trim().length()==0){
+	                //	System.out.println("xx"+str+"yy");
+	                	sorter.setRowFilter(RowFilter.regexFilter("(^$)", column));
+	                	
+	                }else {
+	                 //sorter.setRowFilter(RowFilter.regexFilter(str, column)); //case sensitive
+	                  sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str, column));
+	                }
+	             }
+			
+		});
+		
+		
+		
+		//bottom
 		JPanel panel_bottomPanel = new JPanel();
 		contentPane.add(panel_bottomPanel, BorderLayout.SOUTH);
 
@@ -463,5 +530,4 @@ public class RoleFrame extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(this, "Cell with value \"" + searchTerm + "\" not found!");
         }
     }
-
 }
