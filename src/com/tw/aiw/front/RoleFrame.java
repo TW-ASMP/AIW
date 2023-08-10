@@ -92,6 +92,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 	private String[] topNodes = {"","THX-DIG"};
 	private String[] columnIndex = {"0","1","2","3","4","5"};
 	private JTextField filterTextField;
+	private JTextField filterTextField1;
 	/**
 	 * Launch the application.
 	 */
@@ -297,17 +298,33 @@ public class RoleFrame extends JFrame implements ActionListener{
 		panel_upPanel.add(btn_loadBtn);
 		
 		// filter section
+		
+		JLabel lblNewLabel = new JLabel("Filters:");
+		lblNewLabel.setBounds(455, 101, 56, 26);
+		panel_upPanel.add(lblNewLabel);
+		
 		this.sorter = new TableRowSorter<>(this.roleTblModel);
 		this.roleTable.setRowSorter(sorter);
+		
 		filterTextField = new JTextField();
-		filterTextField.setBounds(449, 101, 96, 20);
+		filterTextField.setBounds(499, 101, 130, 26);
 		panel_upPanel.add(filterTextField);
 		filterTextField.setColumns(10);
 		
 		JComboBox filterComboBox = new JComboBox(this.columnIndex);
-		filterComboBox.setBounds(552, 100, 54, 22);
+		filterComboBox.setBounds(627, 101, 78, 26);
 		panel_upPanel.add(filterComboBox);
-		filterTextField.getDocument().addDocumentListener(new DocumentListener() {
+		
+		filterTextField1 = new JTextField();
+		filterTextField1.setBounds(717, 101, 130, 26);
+		panel_upPanel.add(filterTextField1);
+		filterTextField1.setColumns(10);
+		
+		JComboBox filterComboBox1 = new JComboBox(this.columnIndex);
+		filterComboBox1.setBounds(843, 101, 78, 26);
+		panel_upPanel.add(filterComboBox1);
+		
+		DocumentListener dListener = new DocumentListener() {
 			 @Override
 	            public void insertUpdate(DocumentEvent e) {
 	                //update(e);
@@ -325,7 +342,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 	                //update(e);
 					 search(filterTextField.getText(),Integer.parseInt((String)filterComboBox.getSelectedItem()));
 	            }
-                /*
+             /*
 	            private void update(DocumentEvent e) {
 	                String text = filterTextField.getText();
 	                if (text.trim().length() == 0) {
@@ -347,10 +364,12 @@ public class RoleFrame extends JFrame implements ActionListener{
 	                }else {
 	                 //sorter.setRowFilter(RowFilter.regexFilter(str, column)); //case sensitive
 	                  sorter.setRowFilter(RowFilter.regexFilter("(?i)" + str, column));
+	                  
 	                }
 	             }
 			
-		});
+		};
+		filterTextField.getDocument().addDocumentListener(dListener);
 		
 		
 		
@@ -360,6 +379,22 @@ public class RoleFrame extends JFrame implements ActionListener{
 
 	}
 	
+	public RowFilter setRowFilterValue(String str, int column) {
+		RowFilter filter = null; 
+		if(str.length()== 0) {
+			filter.regexFilter(null);
+		}else if(str.length()>0 && str.trim().length()==0){
+            //	System.out.println("xx"+str+"yy");
+        	filter.regexFilter("(^$)", column);
+        	
+        }else {
+         //sorter.setRowFilter(RowFilter.regexFilter(str, column)); //case sensitive
+         filter.regexFilter("(?i)" + str, column);
+          
+        }
+		
+		return filter;
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
