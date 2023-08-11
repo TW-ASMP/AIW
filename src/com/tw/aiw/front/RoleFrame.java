@@ -204,7 +204,7 @@ public class RoleFrame extends JFrame implements ActionListener{
 			  }
 
 			   void showPopup(MouseEvent me) {
-				      if(me.isPopupTrigger())
+				     // if(me.isPopupTrigger())
 				    	 roleTreePopupMenu.show(me.getComponent(), me.getX(), me.getY());
 				   }
 			};
